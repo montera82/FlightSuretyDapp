@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FlightSurety</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./flightsurety.css" rel="stylesheet" >
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">FlightSurety</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <main class="container">
+        <h2>Register Airline</h2>
+        <div class="row top-20">
+            <input type="text" class="form-control" placeholder="Airline address" id="airline-address" value="0x627306090abaB3A6e1400e9345bC60c78a8BEf57"/>
+        </div>
+
+        <div class="row top-20">
+            <input type="text" class="form-control" placeholder="Fund amount in ETH" id="fund-amount" value="10">
+        </div>
+
+        <div class="row top-20">
+            <btn class="btn btn-primary mr-4" data-id="1" id="1">Register Selected Metamask Account</btn>
+            <btn class="btn btn-primary mr-4" data-id="2" id="2">Register Inputed Account</btn>
+            <btn class="btn btn-primary mr-4" data-id="3" id="3">Fund Selected Airline</btn>
+        </div> 
+    </main>
+
+    <main class="container mt-5">
+        <h2>Buy Insurance</h2>
+        <div class="row top-20">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Flights</label>
+                </div>
+                <select class="custom-select" id="flights">
+                    <option value="-1" selected>Choose...</option>
+                    <option value="1631101040">FL01</option>
+                    <option value="1732101050">FL02</option>
+                    <option value="1833101060">FL03</option>
+                </select>
+              </div>
+        </div>
+
+        <div class="row top-20">
+            <input type="text" class="form-control" placeholder="Insurance amount" id="insurance-amount"  value="1">
+        </div>
+
+
+        <div class="row top-20">
+            <btn class="btn btn-primary mr-4" data-id="4" id="4">Buy Insurance</btn>
+        </div> 
+    </main>
+
+    <main class="container mt-5 oracles">
+        <h2>Oracles and Passenger Payouts</h2>
+        <h4><div>Contract Balance :  <span id="contract-bal">0</span> ETH</div></h4>
+        <div id="display-wrapper" class="top-20">
+        </div>
+        
+        <div class="row top-20">
+            <select class="custom-select" id="oracles-flights">
+                <option value="-1" selected>Choose...</option>
+                <option value="1631101040">FL01</option>
+                <option value="1732101050">FL02</option>
+                <option value="1833101060">FL03</option>
+              </select>
+        </div>
+
+        <div class="row top-20"><input type="text" class="form-control" placeholder="Insurance claim" id="insurance-claim" disabled></div>
+        <div class="row top-20">
+            <btn class="btn btn-primary mr-4" data-id="5" id="5">Fetch Flight Status</btn>
+            <btn class="btn btn-primary mr-4" data-id="6" id="6">Refresh Contract Balance</btn>
+            <btn class="btn btn-primary mr-4" data-id="7" id="6">Get Insurance Claim </btn>
+            <btn class="btn btn-primary mr-4" data-id="8" id="7">Withdraw Insurance Claim</btn>
+        </div> 
+    </main>
+
+    <main class="container mt-5">
+    <h2>Transaction History<span id="ftc-history"></span></h2>
+    <div>
+        <ul id="ftc-events">
+            <!-- Events will appear here from app.js -->
+        </ul>
+        <br>
+        <hr>
+    </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+    <script src="./web3.min.js"></script>
+    <script src="./truffle-contract.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
